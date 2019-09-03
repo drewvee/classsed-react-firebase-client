@@ -32,6 +32,7 @@ export const getScreams = () => (dispatch) => {
       });
     });
 };
+
 export const getScream = (screamId) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios

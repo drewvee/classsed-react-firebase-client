@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import MyButton from '../../util/MyButton';
 import PostScream from '../scream/PostScream';
-import Notifications from './Notifications';
+// import Notifications from './Notifications';
 // MUI stuff
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 // Icons
+import AddIcon from '@material-ui/icons/Add';
 import HomeIcon from '@material-ui/icons/Home';
+import Notifications from '@material-ui/icons/Notifications';
 
 class Navbar extends Component {
   render() {
@@ -20,13 +22,19 @@ class Navbar extends Component {
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
-              <PostScream />
+              {/*<PostScream />*/}
+              <MyButton tip="Post a Scream!">
+                <AddIcon />
+              </MyButton>
               <Link to="/">
                 <MyButton tip="Home">
                   <HomeIcon />
                 </MyButton>
               </Link>
-              <Notifications />
+              {/*<Notifications />*/}
+              <MyButton tip="Notifications">
+                <Notifications />
+              </MyButton>
             </Fragment>
           ) : (
             <Fragment>
